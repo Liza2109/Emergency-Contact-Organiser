@@ -1,0 +1,17 @@
+{% extends 'contacts/base.html' %}
+{% block title %}Import Contacts (CSV){% endblock %}
+{% block content %}
+<h2>Import Contacts from CSV</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="file" accept=".csv" required>
+    <button type="submit" class="btn btn-primary">Import</button>
+</form>
+{% if messages %}
+    <div class="mt-3">
+        {% for message in messages %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Django Server",
+      "type": "shell",
+      "command": "D:/ECO/.venv/Scripts/python.exe manage.py runserver",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Migrations",
+      "type": "shell",
+      "command": "D:/ECO/.venv/Scripts/python.exe manage.py migrate",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

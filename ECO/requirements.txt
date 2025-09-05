@@ -1,0 +1,10 @@
+Django>=5.2.4
+numpy
+pandas
+scikit-learn
+requests
+beautifulsoup4
+matplotlib
+seaborn
+djangorestframework
+python-dotenv

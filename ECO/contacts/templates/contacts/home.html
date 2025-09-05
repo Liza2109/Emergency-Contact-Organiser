@@ -1,0 +1,17 @@
+{% extends 'contacts/base.html' %}
+{% block title %}Home - Emergency Contact Organizer{% endblock %}
+{% block content %}
+<div class="text-center mt-5">
+    <h1>Welcome to Emergency Contact Organizer</h1>
+    <p class="lead">Easily manage, analyze, and prioritize your emergency contacts.<br>
+    Features include contact management, categories, import/export, dashboard, web scraping, and more.</p>
+    <a href="/register/" class="btn btn-primary">Get Started</a>
+    <a href="/login/" class="btn btn-success">Login</a>
+    <hr>
+    <h4 class="mt-4">Quick Links</h4>
+    <a href="/contacts/" class="btn btn-outline-info m-2">My Contacts</a>
+    <a href="/categories/" class="btn btn-outline-info m-2">Categories</a>
+    <a href="/dashboard/" class="btn btn-outline-info m-2">Dashboard</a>
+    <a href="/import/" class="btn btn-outline-info m-2">Import CSV</a>
+</div>
+{% endblock %}

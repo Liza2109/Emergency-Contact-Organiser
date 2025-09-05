@@ -1,0 +1,40 @@
+{% extends 'contacts/base.html' %}
+{% block title %}My Contacts{% endblock %}
+{% block content %}
+<h2>My Emergency Contacts</h2>
+<a href="/contacts/add/" class="btn btn-primary mb-3">Add Contact</a>
+{% if messages %}
+    <div class="mt-3">
+        {% for message in messages %}
+            <div class="alert alert-warning">{{ message }}</div>
+        {% endfor %}
+    </div>
+{% endif %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Category</th>
+            <th>Priority</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.name }}</td>
+            <td>{{ contact.phone }}</td>
+            <td>{{ contact.email }}</td>
+            <td>{{ contact.category }}</td>
+            <td>{{ contact.priority }}</td>
+            <td>
+                <a href="/contacts/{{ contact.id }}/edit/" class="btn btn-sm btn-warning">Edit</a>
+                <a href="/contacts/{{ contact.id }}/delete/" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

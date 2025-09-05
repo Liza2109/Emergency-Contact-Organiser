@@ -1,0 +1,31 @@
+{% extends 'contacts/base.html' %}
+{% block title %}Categories{% endblock %}
+{% block content %}
+<h2>Contact Categories</h2>
+<a href="/categories/add/" class="btn btn-primary mb-3">Add Category</a>
+{% if categories %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for category in categories %}
+        <tr>
+            <td>{{ category.name }}</td>
+            <td>{{ category.description }}</td>
+            <td>
+                <a href="/categories/{{ category.id }}/edit/" class="btn btn-sm btn-warning">Edit</a>
+                <a href="/categories/{{ category.id }}/delete/" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<div class="alert alert-info">No categories found. Default categories will appear after first migration, or you can add your own.</div>
+{% endif %}
+{% endblock %}
